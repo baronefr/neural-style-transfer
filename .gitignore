@@ -1,0 +1,18 @@
+# remove cache
+**/.ipynb_checkpoints
+**/__pycache__
+
+# remove datasets
+**/dataset/
+
+# remove tmp
+**/tmp/
+
+# remove private dev folder
+dev/*
+
+# remove local backup
+bak/*
+
+# pytorch cache
+.pytorch/
