@@ -4,6 +4,12 @@
 </p>
 
 
+## Setup
+
+```bash
+pip install -r requirements.txt
+```
+
 
 
 ## Bibliography

@@ -4,6 +4,10 @@
 
 # remove datasets
 **/dataset/
+image/artbench-10/*
+image/content_dataset/*
+image/*.tar
+
 
 # remove tmp
 **/tmp/
