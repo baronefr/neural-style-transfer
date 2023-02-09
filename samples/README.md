@@ -77,3 +77,9 @@ We test the color control features: `none`, `hist`, `hist_from_style`, `luminanc
 ## adam/
 
 We use Adam instead of LBFGS. The results are obviously worse.
+
+
+
+## huang/
+
+Plots of figure from Huang paper, made with Gatys.
