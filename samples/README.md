@@ -80,6 +80,11 @@ We use Adam instead of LBFGS. The results are obviously worse.
 
 
 
-## huang/
+## huang_comparison/
 
 Plots of figure from Huang paper, made with Gatys algorithm for comparison.
+
+
+## huang/
+
+Plots of figure from Huang paper, made with Huang algorithm for comparison.
