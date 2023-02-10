@@ -1,6 +1,13 @@
-# **Neural Style Transfer**
+<h1 align="center"> <b>Neural Style Transfer</b> </h1>
 
 <p align="center"><b>Project</b> // Barone Francesco, Ninni Daniele, Zinesi Paolo<br></p>
+
+<p align='center'>
+  <img src='samples/prato-afremov.jpg' height="140px">
+  <img src='samples/tiger-picasso.jpg' height="140px">
+  <img src='samples/camogli-wave.jpg' height="140px">
+  <img src='samples/cc/bolzano-starry_hist.jpg' height="140px">
+</p>
 
 
 ## Inside this repo

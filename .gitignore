@@ -27,6 +27,7 @@ make/*
 
 # delivery zip
 .ignore
+README.html
 
 # not necessary models
 models/decoder_b16.pth
