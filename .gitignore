@@ -1,22 +1,29 @@
 # remove cache
 **/.ipynb_checkpoints
 **/__pycache__
+.pytorch/
+
+# remove tmp
+**/tmp/
 
 # remove datasets
 **/dataset/
 image/artbench-10/*
 image/content_dataset/*
 image/*.tar
-
-
-# remove tmp
-**/tmp/
+image/huang/*
+image/hidden/*
 
 # remove private dev folder
 dev/*
+dev_daniele/*
 
 # remove local backup
 bak/*
 
-# pytorch cache
-.pytorch/
+# remove report & image scripting
+tex/*
+make/*
+
+# delivery zip
+.ignore
