@@ -3,6 +3,10 @@
 <p align="center"><b>Project</b> // Barone Francesco, Ninni Daniele, Zinesi Paolo<br></p>
 
 <p align='center'>
+  <img style="width:95%;" src='samples/cover.jpg'>
+</p>
+
+<p align='center'>
   <img src='samples/prato-afremov.jpg' height="140px">
   <img src='samples/tiger-picasso.jpg' height="140px">
   <img src='samples/camogli-wave.jpg' height="140px">
