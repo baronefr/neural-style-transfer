@@ -1,6 +1,5 @@
-torch
-tqdm
+torch >= 1.14.0
+tqdm >= 4.0
 numpy
 matplotlib
-skimage
 PIL
