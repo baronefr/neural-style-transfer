@@ -1,4 +1,17 @@
 
+# ====================================================
+#  deepstyle  -  a neural style project
+#  neural networks and deep learning exam project
+#
+#   UNIPD Project |  AY 2022/23  |  NNDL
+#   group : Barone, Ninni, Zinesi
+# ----------------------------------------------------
+#   coder : Barone Francesco
+#         :   github.com/baronefr/
+#   dated : 5 Feb 2023
+#     ver : 1.0.0
+# ====================================================
+
 
 import numpy as np
 import PIL
@@ -121,7 +134,7 @@ class color_control():
 
 
     def preprocess(self, loadargs : dict = {}, init_from : str = 'content',
-                   force_target : list = None,
+                   force_target : list = None, add_noise : float | None = None,
                    hist_association : list = None, hist_variant : str = 'eigs') -> dict:
         
         assert init_from in ['content', 'style', 'rand'], 'init source not valid'
@@ -201,13 +214,16 @@ class color_control():
                 # copy the target from content image
                 for img in self.content:
                     tgt = img.soft_clone()
-                    tgt.data = torch.autograd.Variable(img.data.clone(), requires_grad=True) # .to(img.device)
+                    tgt.data = torch.autograd.Variable(img.data.clone())#, requires_grad=True) # .to(img.device)
+                    if add_noise is not None:
+                        tgt.data += add_noise*torch.rand(tgt.data.shape, device = tgt.data.device)
+                    tgt.data.requires_grad = True
                     self.target.append( tgt )
 
             elif init_from == 'style':
                 for img, etc in zip(self.style, self.content):
                     tgt = img.soft_clone()
-                    # nb: tgt size will bre broken!
+                    # nb: tgt size will be broken!
                     tgt.data = torch.autograd.Variable( 
                         # take new image size from content picture
                         transforms.Resize( etc.data.shape[2:] )( img.data ).clone(),

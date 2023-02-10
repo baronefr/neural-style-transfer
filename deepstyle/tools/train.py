@@ -1,6 +1,19 @@
 
-from tqdm import tqdm
+# ====================================================
+#  deepstyle  -  a neural style project
+#  neural networks and deep learning exam project
+#
+#   UNIPD Project |  AY 2022/23  |  NNDL
+#   group : Barone, Ninni, Zinesi
+# ----------------------------------------------------
+#   coder : Barone Francesco
+#         :   github.com/baronefr/
+#   dated : 5 Feb 2023
+#     ver : 1.0.0
+# ====================================================
 
+
+from tqdm import tqdm
 
 
 class TrainMethod():

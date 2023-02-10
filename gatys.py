@@ -1,15 +1,17 @@
 #!/usr/bin/python3
 
-# ========================================
+# ====================================================
 #  deepstyle  -  a neural style project
-# ----------------------------------------
+#  neural networks and deep learning exam project
+#
+#   UNIPD Project |  AY 2022/23  |  NNDL
+#   group : Barone, Ninni, Zinesi
+# ----------------------------------------------------
 #   coder : Barone Francesco
 #         :   github.com/baronefr/
 #   dated : 5 Feb 2023
-#     ver : 0.1.1
-# ========================================
-
-
+#     ver : 1.0.0
+# ====================================================
 
 
 # %% import libraries
@@ -29,12 +31,7 @@ parser = argparse.ArgumentParser()
 
 # %% setup env
 
-torch.manual_seed(17)
-
-# remark: device is parsed by command line ...
-#device = "cuda" if torch.cuda.is_available() else "cpu"
-#device
-
+#torch.manual_seed(17)
 
 
 # %% parse arguments
@@ -98,6 +95,7 @@ elif isinstance(OPT_STYLE_WEIGHTS, str):
 device = config.device
 if device is None:
     device = "cuda" if torch.cuda.is_available() else "cpu"
+    device_hr = device
 else:
     if ',' in device:
         device, device_hr = device.split(',')
@@ -209,7 +207,7 @@ if HIGH_RES > IMAGE_SIZE:
     # account for device change
     if device != device_hr:
         device_hr
-        print('[info] switching device {} -> {}'.format(device, device_hr) )
+        print('\n[info] switching device {} -> {}'.format(device, device_hr) )
         nstn.to( device_hr )
         style_img.device = device_hr
         content_img.device = device_hr
@@ -229,7 +227,7 @@ if HIGH_RES > IMAGE_SIZE:
     # ... and initializing the algo from the generated output at lower resolution
     generated_img.resize( content_img.data.shape[2:] )
     if device != device_hr: # force to switch device
-        generated_img.data = generated_img.data.to(device)
+        generated_img.data = generated_img.data.to(device_hr)
     generated_img.data.requires_grad = True
 
 
@@ -246,7 +244,7 @@ if HIGH_RES > IMAGE_SIZE:
         optimizer = torch.optim.LBFGS([generated_img.data], lr=OPT_LR)
     elif OPT == 'Adam':
         optimizer = torch.optim.Adam([generated_img.data], lr=OPT_LR)
-        
+    
 
     transfer = deepstyle.tools.train.TrainMethod(optimizer = optimizer, logger_period = LOGGER_PERIOD)
 
