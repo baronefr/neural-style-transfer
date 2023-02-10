@@ -27,3 +27,8 @@ make/*
 
 # delivery zip
 .ignore
+
+# not necessary models
+models/decoder_b16.pth
+models/decoder_b32.pth
+models/decoder_HUANG.pth
