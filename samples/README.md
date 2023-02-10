@@ -82,4 +82,4 @@ We use Adam instead of LBFGS. The results are obviously worse.
 
 ## huang/
 
-Plots of figure from Huang paper, made with Gatys.
+Plots of figure from Huang paper, made with Gatys algorithm for comparison.
